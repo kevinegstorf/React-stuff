@@ -6,6 +6,8 @@ import Inventory from './Inventory';
 class App extends React.Component {
   constructor() {
     super();
+
+    this.addFish = this.addFish.bind(this);
     this.state = {
       fishes: {},
       order: {}
@@ -16,6 +18,7 @@ class App extends React.Component {
     const fishes = {...this.state.fishes};
     const timestamp = Date.now();
     fishes[`fish-${timestamp}`] = fish;
+    this.setState({ fishes})
   }
   render() {
     return(
